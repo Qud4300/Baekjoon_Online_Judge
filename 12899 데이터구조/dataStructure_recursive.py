@@ -6,7 +6,7 @@ input = sys.stdin.readline
 
 size = 2000000
 n = int(input())
-seg_tree = [0 for _ in range((math.ceil(math.sqrt(size + 1))) ** 2 * 4 + 1)]
+seg_tree = [0 for _ in range((1 << int(math.ceil(math.log2(size + 1)))+1) + 1)]
 
 
 def insert(tree, start, end, v, x):
