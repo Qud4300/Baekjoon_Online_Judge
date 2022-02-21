@@ -6,7 +6,7 @@ input = sys.stdin.readline
 n = int(input())
 nums = [0] + [*map(int, input().split())]
 M = max(nums)
-seg_tree = [None for _ in range((math.ceil(math.sqrt(n + 1))) ** 2 * 4 + 1)]
+seg_tree = [0 for _ in range((1 << math.ceil(math.log2(n + 1))+1) + 1)]
 
 
 def merge(a, b):
@@ -22,8 +22,8 @@ def merge(a, b):
                 a_size -= 1
         else:
             temp.append(b[j])
-            j += 1
             count += a_size
+            j += 1
     while i < len(a):
         temp.append(a[i])
         i += 1
