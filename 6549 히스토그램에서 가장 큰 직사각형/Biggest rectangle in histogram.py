@@ -10,7 +10,7 @@ def biggest(left, right):
     if right == left:
         return arr[left]
     mid = (left + right) // 2
-    mid_l, mid_r = (left + right) // 2, (left + right) // 2 + 1
+    mid_l, mid_r = mid, mid + 1
     cur_height = min(arr[mid_l], arr[mid_r])
     cur_area = cur_height * 2
     while mid_l > left or mid_r < right:
