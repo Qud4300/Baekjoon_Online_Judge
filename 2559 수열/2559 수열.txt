@@ -1,0 +1,11 @@
+# BOJ 2559 수열
+import sys
+n, k = map(int, input().split())
+temps = [*map(int, input().split())]
+cumul = [0]
+cur_max = -sys.maxsize
+for i in range(0, n):
+    cumul.append(cumul[i] + temps[i])
+for j in range(k, n+1):
+    cur_max = max(cur_max, cumul[j]-cumul[j-k])
+print(cur_max)
